@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        body {
+            font-family: sans-serif,'Arial';
+            margin: 0px 0px 0px 0px;
+            padding: 0px;
+            background-color: rgb(255, 255, 255);
+            overflow:visible;
+        }
+        .header {
+            background-color: #000000;
+            color: gray;
+            padding: 2px 0;
+            text-align: center; 
+        }
+        #outerbox {
+            overflow: hidden;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            background-size: cover;
+            background-position: center;
+            width: 450px;
+            margin: 50px auto;
+        }
+        #sliderbox {
+            position: relative;
+            display: flex;
+            width: 450px;
+            height: 550px;
+            animation: slider 30s infinite;
+            background-color: aliceblue;
+        }
+
+        @keyframes slider {
+
+            0%,
+            10% {
+                left: 0;
+            }
+
+            12.5%,
+            22.5% {
+                left: -450px;
+            }
+
+            25%,
+            35% {
+                left: -860px;
+            }
+
+            37.5%,
+            47.5% {
+                left: -1300px;
+            }
+
+            50%,
+            60% {
+                left: -1650px;
+            }
+
+            62.5%,
+            72.5% {
+                left: -2250px;
+            }
+
+            75%,
+            85% {
+                left: -2700px;
+            }
+
+            87.5%,
+            96.5% {
+                left: -3150px;
+            }
+            99%,
+            109% {
+                left: -3600px;
+            }
+           
+            
+        }
+
+        #sliderbox img {
+            width: 450px;
+            height: 450px;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color:GRAY;
+        }
+        .nav a {
+            color:rgb(5, 5, 80);
+            padding: 10px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .nav a:hover {
+            background-color:red;
+        }
+        .main {
+            padding: 50px;
+            text-align: center;
+        }
+        .footer {
+            background-color: #070707;
+            color: #ece9e9;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>WELCOME TO BAGYO SHOES</h1>
+    </div>
+    <div class="nav">
+        <a href="index.html">HOME</a>
+        <a href="products.html">PRODUCTS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="login.html">LOG-IN</a>
+    </div>
+    <div id="outerbox">
+        <div id="sliderbox">
+            <img src="https://worldbalance.com.ph/cdn/shop/files/WBSIDESTEPMBEIGE_1.jpg?v=1714010394"/>
+            <img src="https://wolfandshepherd.com/cdn/shop/products/CrossoverLongwing_Grey_Lateral.jpg?v=1673588647"/>
+            <img src="https://columbia.scene7.com/is/image/ColumbiaSportswear2/1781181_011_f?wid=768&hei=806&v=1732784020"/>
+            <img src="https://underarmour.scene7.com/is/image/Underarmour/3027344-001_DEFAULT?rp=standard-30pad|pdpMainDesktop&scl=1&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=566&hei=708&size=536,688"/>
+            <img src="https://underarmour.scene7.com/is/image/Underarmour/3026128-001_DETAIL5?rp=standard-30pad|pdpMainDesktop&scl=1&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=566&hei=708&size=536,688"/>
+            <img src="https://assets.adidas.com/images/w_600,f_auto,q_auto/a3b3c26ba11f450a9f91ae9b00f43cb9_9366/Galaxy_6_Shoes_Black_GW3847_01_standard.jpg"/>
+            <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/78b76ab3632d4251a7f2ae2b005fb600_9366/Grand_Court_TD_Lifestyle_Court_Casual_Shoes_White_GW9250_01_standard.jpg"/>
+            <img src="https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/b1bcbca4-e853-4df7-b329-5be3c61ee057/NIKE+DUNK+LOW+RETRO.png"/>
+            <img src="https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/ca929f7e-f433-46b7-8d83-1a6171c172ce/NIKE+REVOLUTION+7+EASYON.png"/>
+            <img src="https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/b7d9211c-26e7-431a-ac24-b0540fb3c00f/AIR+FORCE+1+%2707.png"/>
+            <img src="https://trilogymerchph.com/cdn/shop/files/MENS-NIKE-PRECISION-6-BASKETBALL-SHOES-BLACK-IRON-GREY-WHITE-DD9535-003-1_1728x.png?v=1705733575">
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy;ITS NOT ABOUT THE SHOES, IT'S WHAT YOU DO IN THEM.</p>
+    </div>
+</body>

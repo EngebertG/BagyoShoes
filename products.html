@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0px 0px 0px 0px;
+            padding: 0px;
+            background-color: rgb(255, 255, 255);
+            color: #000000;
+        }
+        .header {
+            width: 150%;
+            background-color: #000000;
+            color: gray;
+            padding: 10px;
+            text-align: center; 
+        }
+        #outerbox {
+            overflow: hidden;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            background-size: cover;
+            background-position: center;
+            width: 450px;
+            margin: 50px auto;
+
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            background-color:white;
+            background-repeat: repeat;
+            background-position: center;
+            overflow: auto;
+        }
+        .nav a {
+            color: #000000;
+            padding: 10px 20px;
+            text-decoration: none;
+            text-align: center;
+            
+        }
+        .nav a:hover {
+            background-color:red;
+        }
+        nav{
+            display: flex;
+            justify-content: center;
+            background-color: aliceblue;
+            padding: 10px;
+            gap: 15px;
+        }
+        body {
+            font-family: cursive;
+            margin: 0px 100px 0px 100px;
+            padding: 0px;
+            background-color: rgb(255, 255, 255);
+        }
+        .gallery {
+            perspective: 1000px;
+        }
+
+        .gallery-container {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate 6s infinite linear;
+            gap: 20px;
+        }
+        .nav {
+            width: 200%;
+            display: flex;
+            justify-content: center;
+            background-color: rgb(104, 103, 103);
+        }
+        .gallery-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-image:nth-child(1) {
+            transform: rotateY(0deg);
+        }
+
+        .gallery-image:nth-child(2) {
+            transform: rotateY(90deg);
+        }
+
+        .gallery-image:nth-child(3) {
+            transform: rotateY(180deg);
+        }
+
+        .gallery-image:nth-child(4) {
+            transform: rotateY(270deg);
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            background-color: whitesmoke;
+            transition: transform 0.3s;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+
+        .price {
+            font-size: 1.2em;
+            color: #ff6b15;
+            margin-top: 10px;
+        }
+
+        .description {
+            font-size: 0.9em;
+            color: black;
+            margin-top: 5px;
+        }
+
+        .detail-view {
+            display: none;
+            padding: 20px;
+            text-align: center;
+            background-color: whitesmoke;
+        }
+
+         .detail-view img {
+            width: 288px; 
+            height: 480px; 
+            max-width: 100%;
+            height: auto;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: transparent;
+            color: black;
+            text-shadow: 0 0 5px whitesmoke, 0 0 10px whitesmoke;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 5px whitesmoke;
+            margin: 0 10px;
+        }
+
+        button:hover {
+            box-shadow: 0 0 20  whitesmoke, 0 0 30px whitesmoke;
+            transform: scale(1.1);
+        }
+
+        .back-button {
+            margin-top: 20px;
+            display: block;
+            color: black;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+  <div class="header">
+    <h1>WELCOME TO BAGYO SHOES</h1>
+ </div>
+ <div class="nav">
+    <a href="index.html">HOME</a>
+    <a href="products.html">PRODUCTS</a>
+    <a href="about.html">ABOUT</a>
+    <a href="login.html">LOG-IN</a>
+ </div>
+ <br></br>
+
+     <div class="gallery">
+        <div class="gallery-container">
+            <div class="gallery-image"><img src="http://www.lesitedelasneaker.com/wp-content/images/2017/11/nike-air-force-1-off-white-ten-AO4606-100-2.jpg"></div>
+            <div class="gallery-image"><img src="https://n2.sdlcdn.com/imgs/g/5/9/Adidas-yezzy-boost-Sply-350-SDL621623852-5-a848e.jpeg"></div>
+            <div class="gallery-image"><img src="https://cdna.lystit.com/photos/underarmour/1dbd1d7c/under-armour-Midnight-NavyWhite-Mens-Ua-Team-Drive-4-Basketball-Shoes.jpeg"></div>
+            <div class="gallery-image"><img src="https://www.urbanathletics.com.ph/cdn/shop/products/B75806_b_final_2048x.jpg?v=1660526785"></div>
+        </div>
+     </div>
+     
+     <div class="product-grid" id="productGrid">
+        <!-- Jewelry products will be dynamically added here -->
+    </div>
+
+    <div class="detail-view" id="detailView">
+        <h2 id="detailTitle"></h2>
+        <img id="detailImage" src="" alt="Product Image">
+        <p class="price" id="detailPrice"></p>
+        <p id="detailDescription"></p>
+        <div class="button-container">
+            <button id="buyButton">Buy Now</button>
+            <button id="addToCartButton">Add to Cart</button>
+        </div>
+        <span class="back-button" id="backToProductsButton">Back to Products</span>
+    </div>
+
+    <script>
+        const products = [
+    { id: 1, title: "Air Max 90", price: 29.99, description: "Classic Air Max silhouette with a comfortable fit and              design.", image: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/99486859-0ff3-46b4-949b-2d16af2ad421/custom-nike-dunk-high-by-you-shoes.png" },
+    { id: 2, title: "Yeezy Boost 350", price: 49.99, description: "Iconic sneaker with a knit upper and Boost cushioning for ultimate comfort.", image: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/10e21bef-fffe-4936-aaa9-edc3c74b630b/BOOK+1+EP.png" },
+    { id: 3, title: "Adidas Superstar", price: 69.99, description: "Timeless classic featuring a leather upper and signature shell toe.", image: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/92a462ad-fc7f-40b4-91d9-3e8d3abbd3ce/BOOK+1+EP.png" },
+    { id: 4, title: "Nike Air Force 1", price: 59.99, description: "the first basketball shoe to use nike's technology.", image: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/21d43744-55d4-42a8-9049-c09221f5d223/SABRINA+2+EP.png" },
+    { id: 5, title: "Nike SB Dunk Low Pro", price: 39.99, description: "Retro-inspired sneaker with a bold design and cushioned sole.", image: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ed8d46c0-d433-467c-a72a-c850d6380c85/NIKE+SB+DUNK+LOW+PRO.png" },
+    { id: 6, title: "Nike Dunk Low JP", price: 58.99, description: "Made in the USA, this sneaker offers premium materials and unrivaled comfort.", image: "https://static.nike.com/a/images/w_1280,q_auto,f_auto/ba9dc751-323e-4ab6-9a99-60ac002a9867/dunk-low-midnight-navy-and-varsity-red-ib2051-400-release-date.jpg" },
+    { id: 7, title: "Nike Sb Dunk Low", price: 54.99, description: "Classic high-top sneaker known for its versatility and iconic design.", image: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4926a5dc-909a-4e62-bfa5-1d3ddedfdd0a/NIKE+SB+DUNK+LOW+QS.png" },
+    { id: 8, title: "Nike Dunk Low Retro", price: 49.99, description: "Running shoe with Gel technology for shock absorption and comfort.", image: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/78d04c49-7f82-4077-89f1-38f7fa478ff5/NIKE+DUNK+LOW+RETRO+LTD.png" },
+    { id: 9, title: "Nike Dunk Low Retro", price: 74.99, description: "Stylish low-top sneaker with a durable canvas upper and signature sidestripe.", image: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d01ef37b-c14a-4edd-8787-534f5732294c/NIKE+DUNK+LOW+RETRO.png" },
+    { id: 10, title: "Nike Dunk Low Retro Leader/Suede", price: 149.99, description: "Maximalist running shoe with exceptional cushioning for a smooth ride.", image :"https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d12c7ad1-acf1-4257-a918-299154c29887/NIKE+DUNK+LOW+RETRO.png" },
+    { id: 11, title: "Nike Dunk Low Retro SE", price: 74.99, description: "Retro sneaker with a timeless design, perfect for casual wear.", image: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/adaa6a97-c2f9-4ee1-9078-cc5c764cec42/NIKE+DUNK+LOW+RETRO+QS.png" },
+    { id: 12, title: "Saucony Shadow 6000", price: 49.99, description: "A blend of vintage style and modern comfort, great for everyday wear.", image: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f2da0c7f-8749-4c94-86fd-824e0df667c8/NIKE+DUNK+LOW+RETRO+SE.png" },
+    { id: 13, title: "Fila Disruptor II", price: 39.99, description: "Chunky sneaker with a bold design, perfect for making a statement.", image: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c66ac915-669c-43a2-a081-87e697dd1ce0/NIKE+DUNK+LOW+RETRO+SE.png" },
+    { id: 14, title: "Under Armour HOVR", price: 29.99, description: "Lightweight running shoe with HOVR technology for energy return.", image: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c66ac915-669c-43a2-a081-87e697dd1ce0/NIKE+DUNK+LOW+RETRO+SE.png" },
+    { id: 15, title: "Nike Air Jordan 1", price: 43.99, description: "Iconic basketball sneaker with a high-top design and premium materials.", image: "https://tse1.mm.bing.net/th?id=OIP.5zj1eXpWfsuge4KRswEpWwHaHa&pid=Api&P=0&h=180" },
+    { id: 16, title: "Adidas NMD", price: 39.99, description: "Sleek and modern sneaker with responsive cushioning for all-day comfort.", image: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/73ddadbe-29cc-4634-8856-a1e969028e62/NIKE+DUNK+LOW+RETRO+SE.png"},
+    { id: 17, title: "Balenciaga Triple S", price: 92.99, description: "High-fashion chunky sneaker with a bold silhouette and designer appeal.", image: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/014060e0-47e0-4319-b399-173409752bb2/NIKE+DUNK+LOW+RETRO+QS.png" },
+    { id: 18, title: "Nike React Infinity Run", price: 54.99, description: "Designed for long-distance running with cushioning and stability.", image: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/24c85635-c5d8-4f74-9d31-7276b78a5846/custom-dunk-low-premium.png" },
+    { id: 19, title: "Skechers GOwalk", price: 43.99, description: "Comfortable walking shoes with cushioning and flexible design.", image: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/d0fb6f31-0617-4036-a54f-3eae6ce71b4c/custom-dunk-low-premium.png" },
+    { id: 20, title: "On Cloudstratus", price: 74.99, description: "Performance running shoe with dual-layer cushioning for maximum comfort.", image: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ef3cac95-99e8-4e8b-96a6-e9db4dd9b8df/NIKE+SB+DUNK+LOW+PRO.png" },
+    { id: 21, title: "Jordan 4 Retro", price: 49.99, description: "Classic basketball sneaker with a premium design and comfortable fit.", image: "https://i.pinimg.com/originals/60/cc/be/60ccbe7b05a7fdc543e3c5b580f138be.jpg" },
+    { id: 22, title: "Nike Blazer Mid", price: 89.99, description: "Vintage-inspired sneaker with a retro basketball vibe.", image: "https://tse3.mm.bing.net/th?id=OIP.ZDd5gni8fnDnPU01TlPfxQAAAA&pid=Api&P=0&h=180" },
+    { id: 23, title: "Adidas Ultraboost", price: 79.99, description: "High-performance running shoe known for its comfort and energy return.", image: "https://assets.adidas.com/images/w_940,f_auto,q_auto/0900b5e148474146bfc546e3de59744c_9366/GY9350_HM7.jpg" },
+    { id: 24, title: "Air Jordan 11", price: 89.99, description: "Signature basketball sneaker with a patent leather finish.", image: "https://i0.wp.com/justfreshkicks.com/wp-content/uploads/2022/11/Air-Jordan-11-Low-Cement-Grey-AV2187-140-Release-Date-In-Hand.jpeg?w=1200&ssl=1" },
+    { id: 25, title: "Puma Future Rider", price: 99.99, description: "Retro sneaker with a lightweight design and modern colorways.", image: "https://www.80scasualclassics.co.uk/images/puma-future-rider-vintage-trainers-white-red-p18126-98292_image.jpg" },
+    { id: 26, title: "Nike Dunk Low", price: 19.99, description: "Classic sneaker with a low-top design and vibrant color options.", image: "https://sneakerbardetroit.com/wp-content/uploads/2021/04/Nike-Dunk-Low-University-Blue-DD1391-102-Release-Date-Pricing-5.jpg" },
+    { id: 27, title: "Converse One Star", price: 44.99, description: "Stylish sneaker with a simple design and a comfortable fit.", image: "https://tse4.mm.bing.net/th?id=OIP.SBnJbCs7dnNdI7kf3g2KmQHaJ4&pid=Api&P=0&h=180" },
+    { id: 28, title: "Adidas Yeezy 700", price: 99.99, description: "Chunky sneaker with a stylish silhouette and premium materials.", image: "https://tse2.mm.bing.net/th?id=OIP.aOvYl7tTab6mjaFEXPRK9QHaJQ&pid=Api&P=0&h=180" },
+    { id: 29, title: "New Balance Fresh Foam", price: 29.99, description: "Cushioned running shoe for all-day comfort and support.", image: "https://www.sportsdirect.com/images/imgzoom/21/21464602_xxl_a3.jpg" },
+    { id: 30, title: "Reebok Nano X", price: 59.99, description: "Versatile training shoe designed for all types of workouts.", image: "https://tse1.mm.bing.net/th?id=OIP.5Tdw2IentQHtYSmLMrL0NgHaHa&pid=Api&P=0&h=180" }
+];
+
+        const productGrid = document.getElementById('productGrid');
+        const detailView = document.getElementById('detailView');
+        const detailTitle = document.getElementById('detailTitle');
+        const detailPrice = document.getElementById('detailPrice');
+        const detailDescription = document.getElementById('detailDescription');
+        const detailImage = document.getElementById('detailImage');
+        const buyButton = document.getElementById('buyButton');
+        const addToCartButton = document.getElementById('addToCartButton');
+        const backToProductsButton = document.getElementById('backToProductsButton');
+
+        let cart = [];
+
+        function createProductCard(product) {
+            const card = document.createElement('div');
+            card.classList.add('product');
+            card.innerHTML = `
+                <img src="${product.image}" alt="${product.title}">
+                <h3>${product.title}</h3>
+                <p class="price">$${product.price.toFixed(2)}</p>
+                <p class="description">${product.description}</p>
+            `;
+            card.onclick = () => showProductDetail(product);
+            productGrid.appendChild(card);
+        }
+
+        function showProductDetail(product) {
+            detailTitle.textContent = product.title;
+            detailPrice.textContent = `$${product.price.toFixed(2)}`;
+            detailDescription.textContent = product.description;
+            detailImage.src = product.image;
+
+            detailView.style.display = "block";
+            productGrid.style.display = "none"; // Hide product grid
+
+            buyButton.onclick = () => buyNow(product);
+            addToCartButton.onclick = () => addToCart(product); 
+        }
+
+        function addToCart(product) {
+            cart.push(product);
+            alert(`${product.title} has been added to your cart!`);
+        }
+
+        function buyNow(product) {
+            alert(`Proceeding to buy ${product.title} for $${product.price.toFixed(2)}.`);
+        }
+
+        backToProductsButton.onclick = () => {
+            detailView.style.display = "none";
+            productGrid.style.display = "grid"; // Show product grid again
+        };
+
+        products.forEach(createProductCard);
+		
+    </script>
+</body>
+</html>
