@@ -285,57 +285,60 @@ const productsContainer = document.getElementById("productGrid");
     const detailImage = document.getElementById("detailImage");
     const detailPrice = document.getElementById("detailPrice");
     const detailDescription = document.getElementById("detailDescription");
-    const sizeOptions = document.getElementById("sizeOptions");
     const backToProductsButton = document.getElementById("backToProductsButton");
     const gallery = document.querySelector(".gallery");
 
-     function showDetailView(product) {
-        document.getElementById('detailTitle').textContent = product.title;
-        document.getElementById('detailImage').src = product.image;
-        document.getElementById('detailPrice').textContent = `$${product.price}`;
-        document.getElementById('detailDescription').textContent = product.description;
+    // Function to render products
+    function renderProducts() {
+        products.forEach(product => {
+            const productElement = document.createElement("div");
+            productElement.classList.add("product");
+            productElement.innerHTML = `
+                <img src="${product.image}" alt="${product.title}">
+                <h3>${product.title}</h3>
+                <p class="price">$${product.price.toFixed(2)}</p>
+                <p class="description">${product.description}</p>
+            `;
+            productElement.addEventListener("click", () => showProductDetail(product));
+            productsContainer.appendChild(productElement);
+        });
+    }
 
+    // Function to show product details
+    function showProductDetail(product) {
+        gallery.style.display = "none"; // Hide the carousel5
+        detailView.style.display = "block";
+        productsContainer.style.display = "none"; // Hide the product grid
+        detailTitle.textContent = product.title;
+        detailImage.src = product.image;
+        detailPrice.textContent = `$${product.price.toFixed(2)}`;
+        detailDescription.textContent = product.description;
         const buttonContainer = document.querySelector('.button-container');
         buttonContainer.innerHTML = `
             <label for="sizeSelect">Choose a size:</label>
             <select id="sizeSelect">
-                <option value="39">39</option>
-                <option value="40">40</option>
-                <option value="41">41</option>
-                <option value="42">42</option>
-                <option value="43">43</option>
-                <option value="44">44</option>
-                <option value="45">45</option>
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+                <option value="X-Large">X-Large</option>
             </select>
         `;
 
         document.getElementById('detailView').style.display = 'block';
         document.getElementById('productGrid').style.display = 'none';
     }
-    function backToProducts() {
-        document.getElementById('detailView').style.display = 'none';
-        document.getElementById('productGrid').style.display = 'grid';
-    }
-    const productGrid = document.getElementById('productGrid');
-    products.forEach(product => {
-        const productElement = document.createElement('div');
-        productElement.className = 'product';
-        productElement.innerHTML = `
-            <img src="${product.image}" alt="${product.title}">
-            <h3>${product.title}</h3>
-            <p class="price">$${product.price}</p>
-            <p class="description">${product.description}</p>
-        `;
-        productElement.addEventListener('click', () => showDetailView(product));
-        productGrid.appendChild(productElement);
-    });
-    document.getElementById('backToProductsButton').addEventListener('click', backToProducts);
+
+
+    // Function to go back to the product grid
     backToProductsButton.addEventListener("click", () => {
-        gallery.style.display = "block";
+        gallery.style.display = "block"; // Show the carousel
         detailView.style.display = "none";
-        productsContainer.style.display = "grid";
+        productsContainer.style.display = "grid"; // Show the product grid
     });
+
+    // Initial render of products
     renderProducts();
+</script>
     </script>
 </body>
 </html>
