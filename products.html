@@ -13,11 +13,12 @@
             color: #000000;
         }
         .header {
-            width: 150%;
+            width: 116%;
             background-color: #000000;
             color: gray;
-            padding: 10px;
+            padding: 2px 0;
             text-align: center; 
+
         }
         #outerbox {
             overflow: hidden;
@@ -40,7 +41,6 @@
             background-color:white;
             background-repeat: repeat;
             background-position: center;
-            overflow: auto;
         }
         .nav a {
             color: #000000;
@@ -78,10 +78,11 @@
             gap: 20px;
         }
         .nav {
-            width: 200%;
+            width: 116%;
             display: flex;
             justify-content: center;
             background-color: rgb(104, 103, 103);
+            overflow: hidden;
         }
         .gallery-image {
             position: absolute;
@@ -288,50 +289,52 @@ const productsContainer = document.getElementById("productGrid");
     const backToProductsButton = document.getElementById("backToProductsButton");
     const gallery = document.querySelector(".gallery");
 
-    // Function to render products
-    function renderProducts() {
-        products.forEach(product => {
-            const productElement = document.createElement("div");
-            productElement.classList.add("product");
-            productElement.innerHTML = `
-                <img src="${product.image}" alt="${product.title}">
-                <h3>${product.title}</h3>
-                <p class="price">$${product.price.toFixed(2)}</p>
-                <p class="description">${product.description}</p>
-            `;
-            productElement.addEventListener("click", () => showProductDetail(product));
-            productsContainer.appendChild(productElement);
-        });
+     function showDetailView(product) {
+        document.getElementById('detailTitle').textContent = product.title;
+        document.getElementById('detailImage').src = product.image;
+        document.getElementById('detailPrice').textContent = `$${product.price}`;
+        document.getElementById('detailDescription').textContent = product.description;
+
+        const buttonContainer = document.querySelector('.button-container');
+        buttonContainer.innerHTML = `
+            <label for="sizeSelect">Choose a size:</label>
+            <select id="sizeSelect">
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+            </select>
+        `;
+
+        document.getElementById('detailView').style.display = 'block';
+        document.getElementById('productGrid').style.display = 'none';
     }
-
-    // Function to show product details
-    function showProductDetail(product) {
-        gallery.style.display = "none"; // Hide the carousel
-        detailView.style.display = "block";
-        productsContainer.style.display = "none"; // Hide the product grid
-        detailTitle.textContent = product.title;
-        detailImage.src = product.image;
-        detailPrice.textContent = `$${product.price.toFixed(2)}`;
-        detailDescription.textContent = product.description;
-
-        // Populate size options
-        sizeOptions.innerHTML = ""; // Clear previous options
-        product.sizes.forEach(size => {
-            const sizeOption = document.createElement("option");
-            sizeOption.value = size;
-            sizeOption.textContent = size;
-            sizeOptions.appendChild(sizeOption);
-        });
+    function backToProducts() {
+        document.getElementById('detailView').style.display = 'none';
+        document.getElementById('productGrid').style.display = 'grid';
     }
-
-    // Function to go back to the product grid
-    backToProductsButton.addEventListener("click", () => {
-        gallery.style.display = "block"; // Show the carousel
-        detailView.style.display = "none";
-        productsContainer.style.display = "grid"; // Show the product grid
+    const productGrid = document.getElementById('productGrid');
+    products.forEach(product => {
+        const productElement = document.createElement('div');
+        productElement.className = 'product';
+        productElement.innerHTML = `
+            <img src="${product.image}" alt="${product.title}">
+            <h3>${product.title}</h3>
+            <p class="price">$${product.price}</p>
+            <p class="description">${product.description}</p>
+        `;
+        productElement.addEventListener('click', () => showDetailView(product));
+        productGrid.appendChild(productElement);
     });
-
-    // Initial render of products
+    document.getElementById('backToProductsButton').addEventListener('click', backToProducts);
+    backToProductsButton.addEventListener("click", () => {
+        gallery.style.display = "block";
+        detailView.style.display = "none";
+        productsContainer.style.display = "grid";
+    });
     renderProducts();
     </script>
 </body>
